@@ -8,10 +8,13 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
+  
   </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-button id="present-alert">Click Me</ion-button>
+  <ion-alert
+    trigger="present-alert"
+    header="Please enter your info"
+    [buttons]="alertButtons"
+    [inputs]="alertInputs"
+  ></ion-alert>
 </ion-content>
