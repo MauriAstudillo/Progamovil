@@ -1,1 +1,20 @@
+/* Estilos para el fondo de los tabs en modo oscuro */
+ion-tab-bar {
+    background-color: #222; /* Fondo oscuro para los tabs */
+    color: #fff; /* Color del texto por defecto */
+    --ion-color-primary: #F5F5DC; /* Color de los íconos y etiquetas seleccionadas */
 
+    ion-tab-button {
+        color: #ccc; /* Color del texto de los tabs no seleccionados */
+        
+        &.tab-selected {
+            color: var(--ion-color-primary); /* Color para el tab seleccionado */
+            background-color: rgba(255, 255, 255, 0.1); /* Fondo para el tab seleccionado */
+        }
+        
+        ion-icon {
+            color: inherit; /* Hereda el color del texto */
+        }
+    }
+}
+    
