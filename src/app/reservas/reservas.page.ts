@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './reservas.page.html',
   styleUrls: ['./reservas.page.scss'],
 })
-export class ReservasPage implements OnInit {
-  
+export class ReservasPage implements OnInit {  
   public alertButtons = [
   {
     text: 'Confirmar',
@@ -22,6 +21,8 @@ export class ReservasPage implements OnInit {
     console.log('Reserva Cancelada');
 },
 },
+
+
   
   
   
