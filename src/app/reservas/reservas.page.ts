@@ -6,7 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reservas.page.scss'],
 })
 export class ReservasPage implements OnInit {
-
+  
+  public alertButtons = [
+  {
+    text: 'Confirmar',
+    role: 'confirm',
+    handler: () => {
+      console.log('Reserva Confirmada');
+  },
+},
+{
+  text: 'Cancelar',
+  role: 'cancel',
+  handler: () => {
+    console.log('Reserva Cancelada');
+},
+},
+  
+  
+  
+  ];
   constructor() { }
 
   ngOnInit() {
