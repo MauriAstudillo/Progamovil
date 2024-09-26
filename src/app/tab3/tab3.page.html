@@ -9,26 +9,41 @@
 <ion-content [fullscreen]="true">
 
     <ion-card>
+      <ion-list>
       <ion-card-header>
         <ion-card-title>Iniciar Sesion</ion-card-title>
       </ion-card-header>
     
       <ion-card-content>
-        <ion-item>
-          <ion-input labelPlacement="floating" placeholder="Escribe tu nombre de usuario">
-            <div slot="label">Nombre de usuario <ion-text color="danger">(Required)</ion-text></div>
-          </ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input type= "password" labelPlacement="floating" placeholder="Escriba su contraseña">
-            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-            <div slot="label">Contraseña <ion-text color="danger" class="ion-text-center">(Required)</ion-text></div>
-          </ion-input>
-        </ion-item>
+
+        <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-input label="Nombre de Usuario" required type="text" 
+            labelPlacement="floating"
+            [(ngModel)]="usr.username" name="username"
+            placeholder="Usuario"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Contraseña"  required type="password" 
+              labelPlacement="floating" 
+              [(ngModel)]="usr.password" name="password"
+              placeholder="******"></ion-input>
+          </ion-item>
         
-      </ion-card-content>
-      <ion-button fill="clear">Aceptar</ion-button>
-  <ion-button fill="clear">Cancelar</ion-button>
+      
+      
+    
+      <ion-button expand="block" color="primary" type="submit" size="small" [disabled]="formulario.invalid" >
+        <ion-text color="light">
+          <p>Iniciar Sesión</p>
+        </ion-text>
+      </ion-button>
+    </form>
+    </ion-card-content>
+  </ion-list>
+      <ion-text color="primary">
+        <h1>{{mensaje}}</h1>
+      </ion-text>
     </ion-card>
     
 
