@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+       <ion-back-button></ion-back-button>
+    
+    <ion-title class="ion-text-center">
+      Viajes
+    </ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  
+  <ion-title> Conductores Tellevo disponibles</ion-title>
+  <ion-header collapse="condense">
+
+  </ion-header>
+  <ion-list>
+    <ion-item>
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>Wacoldo Gonzales</ion-label>
+      <ion-button id="present-alert">Mellevas?</ion-button>
+      <ion-alert
+  trigger="present-alert"
+  header="Reservar Asiento?"
+  [buttons]="alertButtons"
+></ion-alert>
+    </ion-item>
+    <ion-item>
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>Fabrinho Makenko</ion-label>
+      <ion-button id="present-alert2">Mellevas?</ion-button>
+      <ion-alert
+  trigger="present-alert2"
+  header="Reservar Asiento?"
+  [buttons]="alertButtons"
+></ion-alert>
+    </ion-item>
+        <ion-item>
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>Markinho Makenko</ion-label>
+      <ion-button id="present-alert3">Mellevas?</ion-button>
+      <ion-alert
+  trigger="present-alert3"
+  header="Reservar Asiento?"
+  [buttons]="alertButtons"
+></ion-alert>
+    </ion-item>
+  </ion-list>
+ 
+  
+</ion-content>

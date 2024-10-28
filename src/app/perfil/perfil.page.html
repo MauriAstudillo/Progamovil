@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-item>
+    <ion-card-header>
+    <ion-avatar>
+    <ion-img class="profile-photo" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+  </ion-avatar>
+      <ion-card-title class="ion-text-center">Markinho Makenko</ion-card-title>
+    </ion-card-header>
+  </ion-item>
+    <ion-card-content>
+      Estudiante de informatica y telecomunicaciones
+    </ion-card-content>
+  </ion-card>
+<ion-card>
+  <ion-card-header>
+  <ion-title > Ajustes de vehiculo</ion-title>
+</ion-card-header>
+<ion-card-content>
+  <ion-list>
+    <ion-item>
+        <ion-select label="Cantidad de asientos" placeholder="Seleccionar">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox>Aparecer como disponible</ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-card-content>
+
+</ion-card>
+  
+</ion-content>

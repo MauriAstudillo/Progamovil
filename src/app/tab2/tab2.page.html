@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Pings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <!-- Aquí puedes agregar contenido si lo deseas -->
+  </ion-header>
+
+  <ion-list [inset]="true">
+    <ion-item button>
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>Markinho Makenko</ion-label>
+      <ion-item-options slot="end">
+        <ion-item-option color="success">
+          <h2>
+            <ion-icon slot="icon-only" name="refresh-outline"></ion-icon>
+          </h2>
+        </ion-item-option>
+        
+        <ion-item-option color="danger" expandable="true">
+          <h2>
+            <ion-icon slot="icon-only" name="remove-circle-outline"></ion-icon>
+          </h2>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item>
+
+    <!-- Ítem para confirmar el viaje -->
+    <ion-item>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <ion-button color="light" style="margin-right: 10px;" (click)="presentCancelAlert()">
+          No confirmar
+        </ion-button>
+        <ion-button color="primary" (click)="presentConfirmAlert()">
+          Confirmar
+        </ion-button>
+      </div>
+    </ion-item>
+    <p></p>
+
+  </ion-list>
+</ion-content>
