@@ -13,7 +13,9 @@ export class Tab3Page implements OnInit {
   mensaje:string=''
   usr:Usuario={
     username:'',
-    password:''
+    password:'',
+    nombre:'',
+    apellido:''
   }
 
 
