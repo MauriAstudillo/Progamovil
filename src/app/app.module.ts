@@ -11,10 +11,14 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { provideHttpClient } from '@angular/common/http';
 
 
+// La firebase
+import { AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment.prod';
+
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), RouterModule.forRoot([]), AppRoutingModule, IonicStorageModule.forRoot()],
+  imports: [BrowserModule, IonicModule.forRoot(), RouterModule.forRoot([]), AppRoutingModule, IonicStorageModule.forRoot(), AngularFireModule.initializeApp(environment.firebaseConfig)],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   
