@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../interfaces/usuario';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { ServiciodbService } from '../services/serviciodb.service';
-import { IonicStorageModule } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',
@@ -12,43 +10,45 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 })
 export class LoginPage implements OnInit {
 
+  usr: Usuario = {
+    username: '',
+    password: '',
+    nombre: '',
+    apellido: ''
+  };
 
-  usr:Usuario={
-    username:'',
-    password:'',
-    nombre:'',
-    apellido:''
-    }
+  constructor(
+    private router: Router,
+    private toastController: ToastController
+  ) { }
 
-    constructor(private router:Router,
-      private toastController:ToastController,
-      private db:ServiciodbService) { }
+  ngOnInit() { }
 
-  ngOnInit() {
-  }
+  onSubmit() {
+    const usuarioData = localStorage.getItem(this.usr.username);
 
-  onSubmit(){
-    let buscado=this.db.leer(this.usr.username);
-    buscado.then(usuarioBuscado=>{
-      if(usuarioBuscado!==null){
+    if (usuarioData) {
+      const usuarioBuscado: Usuario = JSON.parse(usuarioData);
+
+      if (usuarioBuscado.password === this.usr.password) {
+        localStorage.setItem('loggedInUser', this.usr.username);
+
         this.router.navigate(['/tabs/tab3']);
+      } else {
+        this.presentToast('top');
       }
-      else{
-       this.presentToast('top');
-      }
-    })
-
-    
+    } else {
+      this.presentToast('top');
+    }
   }
+
   async presentToast(position: 'top' | 'middle' | 'bottom') {
     const toast = await this.toastController.create({
-      header:'ERROR',
+      header: 'ERROR',
       message: 'Usuario y/o Contraseña incorrecta!!!',
       duration: 2500,
       position: position,
     });
-
     await toast.present();
   }
-
 }

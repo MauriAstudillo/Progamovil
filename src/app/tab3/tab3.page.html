@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <h2>Datos del Usuario</h2>
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input [(ngModel)]="usuario.nombre" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Apellido</ion-label>
+      <ion-input [(ngModel)]="usuario.apellido" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Username</ion-label>
+      <ion-input [(ngModel)]="usuario.username" readonly></ion-input>
+    </ion-item>
+  
+    <h2 class="ion-margin-top">Información del Auto</h2>
+    <ion-item>
+      <ion-label position="stacked">Modelo</ion-label>
+      <ion-input [(ngModel)]="auto.modelo" placeholder="Ingrese modelo de auto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Año</ion-label>
+      <ion-input [(ngModel)]="auto.anio" type="number" placeholder="Ingrese año del auto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Patente</ion-label>
+      <ion-input [(ngModel)]="auto.patente" placeholder="Ingrese patente"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Disponibilidad</ion-label>
+      <ion-toggle [(ngModel)]="auto.disponibilidad" color="success"></ion-toggle>
+    </ion-item>
+  
+    <ion-button expand="full" color="primary" (click)="guardarDatos()">Guardar Cambios</ion-button>
+  </ion-content>
